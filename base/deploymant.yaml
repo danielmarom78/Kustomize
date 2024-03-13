@@ -15,3 +15,20 @@ spec:
       containers:
       - name: my-nginx
         image: nginx
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      volumes:
+      - name: configmap-file
+        configMap:
+          name: configmap-file
+      - name: configmap-env
+        configMap:
+          name: configmap-env
+      - name: configmap-literals
+        configMap:
+          name: configmap-literals
