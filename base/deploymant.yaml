@@ -32,3 +32,9 @@ spec:
       - name: configmap-literals
         configMap:
           name: configmap-literals
+      - name: secret-file
+        secret:
+          secretName: secret-file
+      - name: secret-literals
+        secret:
+          secretName: secret-literals

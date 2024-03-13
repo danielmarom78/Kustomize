@@ -1,0 +1,38 @@
+namespace: kustomize
+namePrefix: generators-
+nameSuffix: "-001"
+
+commonLabels:
+  commonLabel: generated
+commonAnnotations:
+  commonAnnotation: generated
+
+resources:
+- ../base
+
+configMapGenerator:
+- name: configmap-file
+  files:
+  - application.properties
+- name: configmap-env
+  envs:
+  - .env
+- name: configmap-literals
+  literals:
+  - Literals=generatedLiterals
+
+secretGenerator:
+- name: secret-file
+  files:
+  - password.txt  
+- name: secret-literals
+  literals:
+  - username=literals
+  - password=literals
+
+generatorOptions:
+  disableNameSuffixHash: false
+  labels:
+    generatedLabel: generated
+  annotations:
+    generatedAnnotation: generated
