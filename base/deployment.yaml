@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: my-nginx
-        image: nginx
+        image: registry.access.redhat.com/ubi8/ubi-minimal:latest
+        command: [ "/bin/sh", "-c", "while true ; do date; sleep 1; done;" ]
         resources:
           requests:
             memory: "64Mi"

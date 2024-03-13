@@ -1,4 +1,4 @@
-namespace: kustomize
+namespace: generators
 namePrefix: generators-
 nameSuffix: "-001"
 
@@ -8,7 +8,7 @@ commonAnnotations:
   commonAnnotation: generated
 
 resources:
-- ../base
+- ../../base
 
 configMapGenerator:
 - name: configmap-file
